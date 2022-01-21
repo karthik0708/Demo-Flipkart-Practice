@@ -21,11 +21,11 @@ public class customerApplication {
 		//create instance of customer service
 		CustomerService service = new CustomerService();
 		
-		System.out.println("new - for new customer");
-		System.out.println("update - for updating");
-		System.out.println("del - delete customer");
-		System.out.println("list - list all customers");
-		System.out.println("quit - exit the session");
+		System.out.println("1 - for new customer");
+		System.out.println("2 - for updating");
+		System.out.println("3 - delete customer");
+		System.out.println("4 - list all customers");
+		System.out.println("q - exit the session");
 		System.out.println("Session has started.............");
 		System.out.println();
 		
@@ -34,7 +34,7 @@ public class customerApplication {
 		while(true) {
 			String command = scanner.nextLine();
 			
-			if(command.equals("quit")) {
+			if(command.equals("q")) {
 				System.out.println("Exiting session..........");
 				break;
 			}
@@ -44,7 +44,7 @@ public class customerApplication {
 			String name = scanner.nextLine();
 			
 			switch(command) {
-			case "new":
+			case "1":
 				
 				System.out.println("Enter Address: ");
 				String adress = scanner.nextLine();
@@ -52,7 +52,7 @@ public class customerApplication {
 				service.createCustomer(name, adress);
 				break;
 				
-			case "update":
+			case "2":
 
 				System.out.println("Enter changed name or enter skip");
 				String newName = scanner.nextLine();
@@ -63,12 +63,12 @@ public class customerApplication {
 				service.updateCustomer(name, newName, newAdress);
 				break;
 				
-			case "del":
+			case "3":
 				
 				service.deleteCustomer(name);
 				break;
 				
-			case "list":
+			case "4":
 				
 				if(name.equals("admin")) {
 					service.listCustomer();
